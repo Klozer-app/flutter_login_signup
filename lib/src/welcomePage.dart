@@ -3,6 +3,8 @@ import 'package:flutter_login_signup/src/loginPage.dart';
 import 'package:flutter_login_signup/src/signup.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
+
 class WelcomePage extends StatefulWidget {
   WelcomePage({Key key, this.title}) : super(key: key);
 
@@ -56,7 +58,7 @@ class _WelcomePageState extends State<WelcomePage> {
           border: Border.all(color: Colors.white, width: 2),
         ),
         child: Text(
-          'Register now',
+          'Register',
           style: TextStyle(fontSize: 20, color: Colors.white),
         ),
       ),
@@ -69,7 +71,7 @@ class _WelcomePageState extends State<WelcomePage> {
         child: Column(
           children: <Widget>[
             Text(
-              'Quick login with Touch ID',
+              'Quick login with Fingerprint',
               style: TextStyle(color: Colors.white, fontSize: 17),
             ),
             SizedBox(
@@ -80,7 +82,7 @@ class _WelcomePageState extends State<WelcomePage> {
               height: 20,
             ),
             Text(
-              'Touch ID',
+              'Fingerprint',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 15,

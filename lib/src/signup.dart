@@ -77,7 +77,7 @@ class _SignUpPageState extends State<SignUpPage> {
               end: Alignment.centerRight,
               colors: [Color(0xfffbb448), Color(0xfff7892b)])),
       child: Text(
-        'Register Now',
+        'Register',
         style: TextStyle(fontSize: 20, color: Colors.white),
       ),
     );
@@ -119,7 +119,7 @@ class _SignUpPageState extends State<SignUpPage> {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-          text: 'd',
+          text: 'bri',
           style: GoogleFonts.portLligatSans(
             textStyle: Theme.of(context).textTheme.display1,
             fontSize: 30,
@@ -128,12 +128,12 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
           children: [
             TextSpan(
-              text: 'ev',
+              text: 'dg',
               style: TextStyle(color: Colors.black, fontSize: 30),
             ),
             TextSpan(
-              text: 'rnz',
-              style: TextStyle(color: Color(0xffe46b10), fontSize: 30),
+              text: 'd',
+              style: TextStyle(color: Color(0xffe46b10), fontSize:30),
             ),
           ]),
     );
@@ -142,8 +142,8 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget _emailPasswordWidget() {
     return Column(
       children: <Widget>[
-        _entryField("Username"),
-        _entryField("Email id"),
+        _entryField("Name and Surname"),
+        _entryField("E-mail"),
         _entryField("Password", isPassword: true),
       ],
     );

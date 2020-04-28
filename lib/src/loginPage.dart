@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_signup/src/signup.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:flutter_login_signup/screens/home_screen.dart';
 import 'Widget/bezierContainer.dart';
 
 class LoginPage extends StatefulWidget {
@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
           ),
           SizedBox(
-            height: 10,
+            height: 5,
           ),
           TextField(
               obscureText: isPassword,
@@ -78,9 +78,9 @@ class _LoginPageState extends State<LoginPage> {
               end: Alignment.centerRight,
               colors: [Color(0xfffbb448), Color(0xfff7892b)])),
       child: Text(
-        'Login',
-        style: TextStyle(fontSize: 20, color: Colors.white),
-      ),
+            'Login',
+            style: TextStyle(fontSize: 20, color: Colors.white),
+          ),
     );
   }
 
@@ -136,7 +136,7 @@ class _LoginPageState extends State<LoginPage> {
                     topLeft: Radius.circular(5)),
               ),
               alignment: Alignment.center,
-              child: Text('f',
+              child: Text('G',
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 25,
@@ -153,7 +153,7 @@ class _LoginPageState extends State<LoginPage> {
                     topRight: Radius.circular(5)),
               ),
               alignment: Alignment.center,
-              child: Text('Log in with Facebook',
+              child: Text('Log in with Google',
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -191,7 +191,24 @@ class _LoginPageState extends State<LoginPage> {
                   fontSize: 13,
                   fontWeight: FontWeight.w600),
             ),
-          )
+          ),
+          SizedBox(
+            width : 15,
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()));
+            },
+            child: Text(
+              'Dash',
+              style: TextStyle(
+                  color: Color(0xfff79c4f),
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600),
+            ),
+          ),
+
         ],
       ),
     );
@@ -201,7 +218,7 @@ class _LoginPageState extends State<LoginPage> {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-          text: 'd',
+          text: 'b',
           style: GoogleFonts.portLligatSans(
             textStyle: Theme.of(context).textTheme.display1,
             fontSize: 30,
@@ -210,12 +227,12 @@ class _LoginPageState extends State<LoginPage> {
           ),
           children: [
             TextSpan(
-              text: 'ev',
-              style: TextStyle(color: Colors.black, fontSize: 30),
+              text: 'ridg',
+              style: TextStyle(color: Color(0xffe46b10), fontSize: 30),
             ),
             TextSpan(
-              text: 'rnz',
-              style: TextStyle(color: Color(0xffe46b10), fontSize: 30),
+              text: 'd',
+              style: TextStyle(color: Colors.black , fontSize: 30),
             ),
           ]),
     );
@@ -224,7 +241,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget _emailPasswordWidget() {
     return Column(
       children: <Widget>[
-        _entryField("Email id"),
+        _entryField("E-mail"),
         _entryField("Password", isPassword: true),
       ],
     );
