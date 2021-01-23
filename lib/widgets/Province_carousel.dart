@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_signup/models/province_model.dart';
-import 'package:flutter_login_signup/screens/Province_screen.dart';
+import 'package:flutter_login_signup/screens/Province.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ProvinceCarousel extends StatelessWidget{
@@ -18,7 +18,7 @@ class ProvinceCarousel extends StatelessWidget{
                 style: TextStyle(
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold,
-                  letterSpacing: 1.5,
+                  letterSpacing: 0.2,
                 ),
               ),
               GestureDetector(
@@ -74,11 +74,11 @@ class ProvinceCarousel extends StatelessWidget{
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  '${destination.universities.length} universities',
+                                  '${destination.institutions.length} universities',
                                   style: TextStyle(
                                     fontSize: 22.0,
                                     fontWeight: FontWeight.w600,
-                                    letterSpacing: 1.2,
+                                    letterSpacing: 0.1,
                                   ),
                                 ),
                                 Text(
@@ -140,7 +140,7 @@ class ProvinceCarousel extends StatelessWidget{
                                         size: 10.0,
                                         color: Colors.white,
                                       ),
-                                      SizedBox(width: 5.0),
+                                      SizedBox(width: 1.0),
                                       Text(
                                         destination.country,
                                         style: TextStyle(

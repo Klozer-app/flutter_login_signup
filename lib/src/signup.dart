@@ -59,28 +59,31 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   Widget _submitButton() {
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      padding: EdgeInsets.symmetric(vertical: 15),
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(5)),
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-                color: Colors.grey.shade200,
-                offset: Offset(2, 4),
-                blurRadius: 5,
-                spreadRadius: 2)
-          ],
-          gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [Color(0xfffbb448), Color(0xfff7892b)])),
-      child: Text(
-        'Register',
-        style: TextStyle(fontSize: 20, color: Colors.white),
+    return GestureDetector(
+
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(vertical: 15),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(5)),
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                  color: Colors.grey.shade200,
+                  offset: Offset(2, 4),
+                  blurRadius: 5,
+                  spreadRadius: 2)
+            ],
+            color: Colors.green),
+        child: Text(
+          'Register',
+          style: TextStyle(fontSize: 20, color: Colors.white),
+        ),
+
       ),
-    );
+        onTap: () {
+          Navigator.pushReplacementNamed(context, '/Home');
+        });
   }
 
   Widget _loginAccountLabel() {
@@ -105,7 +108,7 @@ class _SignUpPageState extends State<SignUpPage> {
             child: Text(
               'Login',
               style: TextStyle(
-                  color: Color(0xfff79c4f),
+                  color: Colors.green,
                   fontSize: 13,
                   fontWeight: FontWeight.w600),
             ),
@@ -119,21 +122,21 @@ class _SignUpPageState extends State<SignUpPage> {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-          text: 'bri',
+          text: 'Klo',
           style: GoogleFonts.portLligatSans(
             textStyle: Theme.of(context).textTheme.display1,
-            fontSize: 30,
+            fontSize: 60,
             fontWeight: FontWeight.w700,
-            color: Color(0xffe46b10),
+            color: Colors.black87,
           ),
           children: [
             TextSpan(
-              text: 'dg',
-              style: TextStyle(color: Colors.black, fontSize: 30),
+              text: 'z',
+              style: TextStyle(color: Colors.green, fontSize: 60),
             ),
             TextSpan(
-              text: 'd',
-              style: TextStyle(color: Color(0xffe46b10), fontSize:30),
+              text: 'er',
+              style: TextStyle(color: Colors.black87, fontSize: 60),
             ),
           ]),
     );
@@ -142,7 +145,6 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget _emailPasswordWidget() {
     return Column(
       children: <Widget>[
-        _entryField("Name and Surname"),
         _entryField("E-mail"),
         _entryField("Password", isPassword: true),
       ],
@@ -152,50 +154,48 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child:Container(
-          height: MediaQuery.of(context).size.height,
-          child:Stack(
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Expanded(
-                      flex: 3,
-                      child: SizedBox(),
-                    ),
-                    _title(),
-                    SizedBox(
-                      height: 50,
-                    ),
-                    _emailPasswordWidget(),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    _submitButton(),
-                    Expanded(
-                      flex: 2,
-                      child: SizedBox(),
-                    )
-                  ],
+        body: SingleChildScrollView(
+            child: Container(
+      height: MediaQuery.of(context).size.height,
+      child: Stack(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                  flex: 3,
+                  child: SizedBox(),
                 ),
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: _loginAccountLabel(),
-              ),
-              Positioned(top: 40, left: 0, child: _backButton()),
-              Positioned(
-                  top: -MediaQuery.of(context).size.height * .15,
-                  right: -MediaQuery.of(context).size.width * .4,
-                  child: BezierContainer())
-            ],
+                _title(),
+                SizedBox(
+                  height: 50,
+                ),
+                _emailPasswordWidget(),
+                SizedBox(
+                  height: 20,
+                ),
+                _submitButton(),
+                Expanded(
+                  flex: 2,
+                  child: SizedBox(),
+                )
+              ],
+            ),
           ),
-        )
-      )
-    );
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: _loginAccountLabel(),
+          ),
+          Positioned(top: 40, left: 0, child: _backButton()),
+          Positioned(
+              top: -MediaQuery.of(context).size.height * .15,
+              right: -MediaQuery.of(context).size.width * .4,
+              child: BezierContainer())
+        ],
+      ),
+    )));
   }
 }

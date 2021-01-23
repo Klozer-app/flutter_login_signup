@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "462544402645",
+    "project_id": "klozer-39953",
+    "storage_bucket": "klozer-39953.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462544402645:android:914f0234598da6a4f80a5c",
+        "android_client_info": {
+          "package_name": "com.innovance.klozer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "462544402645-3js3p3edmqkj067rnp6ln207ua66k8ms.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9L0ZoWCKgPTjPH-L3lsnYps7esTyiKhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462544402645-3js3p3edmqkj067rnp6ln207ua66k8ms.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

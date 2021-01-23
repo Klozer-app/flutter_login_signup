@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_signup/src/signup.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_login_signup/screens/home_screen.dart';
 import 'Widget/bezierContainer.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key, this.title}) : super(key: key);
 
   final String title;
+
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -60,28 +60,29 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _submitButton() {
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      padding: EdgeInsets.symmetric(vertical: 15),
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(5)),
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-                color: Colors.grey.shade200,
-                offset: Offset(2, 4),
-                blurRadius: 5,
-                spreadRadius: 2)
-          ],
-          gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [Color(0xfffbb448), Color(0xfff7892b)])),
-      child: Text(
+    return FlatButton(
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          padding: EdgeInsets.symmetric(vertical: 15),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(5)),
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                    color: Colors.grey.shade200,
+                    offset: Offset(2, 4),
+                    blurRadius: 5,
+                    spreadRadius: 2)
+              ],
+            color : Colors.green,),
+          child: Text(
             'Login',
             style: TextStyle(fontSize: 20, color: Colors.white),
           ),
-    );
+        ),
+        onPressed: () {
+          Navigator.pushReplacementNamed(context, '/Home');
+        });
   }
 
   Widget _divider() {
@@ -187,28 +188,11 @@ class _LoginPageState extends State<LoginPage> {
             child: Text(
               'Register',
               style: TextStyle(
-                  color: Color(0xfff79c4f),
+                  color:  Colors.green,
                   fontSize: 13,
                   fontWeight: FontWeight.w600),
             ),
           ),
-          SizedBox(
-            width : 15,
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()));
-            },
-            child: Text(
-              'Dash',
-              style: TextStyle(
-                  color: Color(0xfff79c4f),
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600),
-            ),
-          ),
-
         ],
       ),
     );
@@ -218,21 +202,21 @@ class _LoginPageState extends State<LoginPage> {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-          text: 'b',
+          text: 'Klo',
           style: GoogleFonts.portLligatSans(
             textStyle: Theme.of(context).textTheme.display1,
-            fontSize: 30,
+            fontSize: 60,
             fontWeight: FontWeight.w700,
-            color: Color(0xffe46b10),
+            color: Colors.black87,
           ),
           children: [
             TextSpan(
-              text: 'ridg',
-              style: TextStyle(color: Color(0xffe46b10), fontSize: 30),
+              text: 'z',
+              style: TextStyle(color:  Colors.green, fontSize: 60),
             ),
             TextSpan(
-              text: 'd',
-              style: TextStyle(color: Colors.black , fontSize: 30),
+              text: 'er',
+              style: TextStyle(color: Colors.black87,fontSize: 60),
             ),
           ]),
     );
@@ -250,59 +234,57 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-            height: MediaQuery.of(context).size.height,
-            child: Stack(
+        body: SingleChildScrollView(
+            child: Container(
+      height: MediaQuery.of(context).size.height,
+      child: Stack(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                Expanded(
+                  flex: 3,
+                  child: SizedBox(),
+                ),
+                _title(),
+                SizedBox(
+                  height: 50,
+                ),
+                _emailPasswordWidget(),
+                SizedBox(
+                  height: 20,
+                ),
+                _submitButton(),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Expanded(
-                        flex: 3,
-                        child: SizedBox(),
-                      ),
-                      _title(),
-                      SizedBox(
-                        height: 50,
-                      ),
-                      _emailPasswordWidget(),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      _submitButton(),
-                      Container(
-                        padding: EdgeInsets.symmetric(vertical: 10),
-                        alignment: Alignment.centerRight,
-                        child: Text('Forgot Password ?',
-                            style:
-                                TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
-                      ),
-                      _divider(),
-                      _facebookButton(),
-                      Expanded(
-                        flex: 2,
-                        child: SizedBox(),
-                      ),
-                    ],
-                  ),
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  alignment: Alignment.centerRight,
+                  child: Text('Forgot Password ?',
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
                 ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: _createAccountLabel(),
+                _divider(),
+                _facebookButton(),
+                Expanded(
+                  flex: 2,
+                  child: SizedBox(),
                 ),
-                Positioned(top: 40, left: 0, child: _backButton()),
-                Positioned(
-                    top: -MediaQuery.of(context).size.height * .15,
-                    right: -MediaQuery.of(context).size.width * .4,
-                    child: BezierContainer())
               ],
             ),
-          )
-        )
-      );
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: _createAccountLabel(),
+          ),
+          Positioned(top: 40, left: 0, child: _backButton()),
+          Positioned(
+              top: -MediaQuery.of(context).size.height * .15,
+              right: -MediaQuery.of(context).size.width * .4,
+              child: BezierContainer())
+        ],
+      ),
+    )));
   }
 }
